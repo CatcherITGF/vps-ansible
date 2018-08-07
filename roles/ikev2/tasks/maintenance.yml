@@ -1,0 +1,20 @@
+---
+- name:
+  import_tasks: push.yml
+  tags:
+    - ikev2-push
+
+- name:
+  import_tasks: pull.yml
+  tags:
+    - ikev2-pull
+
+- name:
+  import_tasks: app_present.yml
+  tags:
+    - ikev2-up
+
+- name:
+  import_tasks: app_absent.yml
+  tags:
+    - ikev2-down

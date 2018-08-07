@@ -1,0 +1,2 @@
+username: snupt
+apps_dir: "/home/{{ username }}/apps"

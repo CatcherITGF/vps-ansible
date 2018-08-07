@@ -1,0 +1,6 @@
+---
+- name:
+  import_tasks: push.yml
+
+- name:
+  import_tasks: app_present.yml

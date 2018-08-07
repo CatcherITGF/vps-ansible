@@ -1,0 +1,19 @@
+- name:
+  import_tasks: push.yml
+  tags:
+    - mail-push
+
+- name:
+  import_tasks: pull.yml
+  tags:
+    - mail-pull
+
+- name:
+  import_tasks: app_present.yml
+  tags:
+    - mail-up
+
+- name:
+  import_tasks: app_absent.yml
+  tags:
+    - mail-down

@@ -1,0 +1,40 @@
+---
+- hosts: test
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name:
+      import_role:
+        name: common
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: blog
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: mail
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: rainloop
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: openvpn
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: ikev2
+        tasks_from: maintenance.yml
+
+    - name:
+      import_role:
+        name: mtproto
+        tasks_from: maintenance.yml

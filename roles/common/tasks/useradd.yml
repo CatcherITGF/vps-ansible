@@ -1,0 +1,28 @@
+---
+- name: create new user
+  user:
+    name: "{{ username }}"
+    password: "{{ password }}"
+    shell: /bin/bash
+    uid: 1000
+    groups: admin
+    append: yes
+
+- name: set authorized key taken from file
+  authorized_key:
+    user: snupt
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+- name: allow sudo group to have passwordless sudo
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '^%admin'
+    line: '%admin ALL=(ALL) NOPASSWD: ALL'
+    validate: '/usr/sbin/visudo -cf %s'
+
+- name: add user to root group
+  user:
+    name: "{{ username }}"
+    groups: root
+    append: yes

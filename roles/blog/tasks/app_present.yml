@@ -1,0 +1,11 @@
+---
+- name: start {{ app_name }}
+  docker_service:
+    project_src: "{{ app_dir }}"
+    services:
+     - app
+    pull: yes
+  register: output
+
+- debug:
+    var: output

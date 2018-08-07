@@ -1,0 +1,9 @@
+---
+- name: synchronization using rsync protocol (push)
+  synchronize:
+    src: "{{ app_name }}"
+    dest: "{{ apps_dir }}"
+    delete: yes
+    owner: no
+    group: no
+  # become: no

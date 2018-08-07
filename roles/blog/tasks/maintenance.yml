@@ -1,0 +1,20 @@
+---
+- name:
+  import_tasks: push.yml
+  tags:
+    - blog-push
+
+- name:
+  import_tasks: pull.yml
+  tags:
+    - blog-pull
+
+- name:
+  import_tasks: app_present.yml
+  tags:
+    - blog-up
+
+- name:
+  import_tasks: app_absent.yml
+  tags:
+    - blog-down

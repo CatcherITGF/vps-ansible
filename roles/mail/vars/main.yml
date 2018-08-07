@@ -1,0 +1,2 @@
+app_name: mailserver
+app_dir: "{{ apps_dir }}/{{ app_name }}"

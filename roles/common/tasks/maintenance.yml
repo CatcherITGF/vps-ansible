@@ -1,0 +1,10 @@
+---
+- name:
+  import_tasks: reboot.yml
+  tags:
+    - common-reboot
+
+- name:
+  import_tasks: upgrade.yml
+  tags:
+    - common-upgrade

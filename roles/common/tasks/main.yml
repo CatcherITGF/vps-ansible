@@ -1,0 +1,23 @@
+---
+- name:
+  import_tasks: useradd.yml
+  vars:
+    ansible_user: root
+
+- name:
+  import_tasks: timezone.yml
+
+- name:
+  import_tasks: upgrade.yml
+
+- name:
+  import_tasks: do.yml
+
+- name:
+  import_tasks: docker.yml
+
+- name:
+  import_tasks: software.yml
+
+- name:
+  import_tasks: reboot.yml

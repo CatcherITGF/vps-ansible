@@ -1,0 +1,26 @@
+---
+- name: add docker’s official gpg key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+- name: get ubuntu version
+  command: lsb_release -cs
+  register: version
+
+- name: add docker’s official reposytory
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu "{{ version.stdout }}" stable
+
+- name: install docker
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - docker-ce
+    - docker-compose
+
+- name: add user to docker group
+  user:
+    name: "{{ username }}"
+    groups: docker
+    append: yes

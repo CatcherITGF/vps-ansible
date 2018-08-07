@@ -1,0 +1,2 @@
+app_name: ikev2
+app_dir: "{{ apps_dir }}/{{ app_name }}"

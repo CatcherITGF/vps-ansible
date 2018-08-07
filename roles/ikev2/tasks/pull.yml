@@ -1,0 +1,7 @@
+---
+- name: synchronization using rsync protocol (pull)
+  synchronize:
+    mode: pull
+    src: "{{ app_dir }}"
+    dest: "{{ role_path }}/files/"
+    delete: yes

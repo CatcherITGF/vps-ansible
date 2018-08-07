@@ -1,0 +1,8 @@
+---
+- name: download digital ocean droplet graphs
+  get_url:
+    url: https://agent.digitalocean.com/install.sh
+    dest: ~/install.sh
+
+- name: install digital ocean droplet graphs
+  command: sh ~/install.sh

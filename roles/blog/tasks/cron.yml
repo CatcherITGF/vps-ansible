@@ -1,0 +1,23 @@
+---
+- name: renew letsencrypt certs on schedule
+  cron:
+    name: renew {{ app_name }} certs
+    minute: "0"
+    hour: "1"
+    job: "docker-compose -f {{ app_dir }}/docker-compose.yml run letsencrypt-renew && docker restart nginx"
+
+- name: daily backup
+  cron:
+    name: "{{ app_name }} daily backup"
+    minute: "0"
+    hour: "3"
+    weekday: "1-6"
+    job: "PASSPHRASE={{ password }} duplicity --allow-source-mismatch {{ app_dir }} b2://{{ b2_account_id }}:{{ b2_application_key }}@dk-vps/{{ app_name }}"
+
+- name: weekly backup
+  cron:
+    name: "{{ app_name }} weekly backup"
+    minute: "0"
+    hour: "3"
+    weekday: "0"
+    job: "PASSPHRASE={{ password }} duplicity full --allow-source-mismatch {{ app_dir }} b2://{{ b2_account_id }}:{{ b2_application_key }}/{{ app_name }}"

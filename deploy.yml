@@ -1,0 +1,13 @@
+---
+- hosts: test
+  gather_facts: no
+  become: yes
+
+  roles:
+    - common
+    - blog
+    - mail
+    - rainloop
+    - openvpn
+    - ikev2
+    - mtproto
