@@ -20,9 +20,3 @@
     regexp: '^%admin'
     line: '%admin ALL=(ALL) NOPASSWD: ALL'
     validate: '/usr/sbin/visudo -cf %s'
-
-- name: add user to root group
-  user:
-    name: "{{ username }}"
-    groups: root
-    append: yes
