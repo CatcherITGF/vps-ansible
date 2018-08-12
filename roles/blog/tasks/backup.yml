@@ -1,15 +1,14 @@
 ---
 - name: install duplicity
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     update_cache: yes
-  with_items:
-    - duplicity
-    - python-pip
+  vars:
+    packages:
+      - duplicity
+      - python-pip
 
 - name: install b2 module
   pip:
-    name: "{{ item }}"
+    name: b2
     executable: pip
-  with_items:
-    - b2

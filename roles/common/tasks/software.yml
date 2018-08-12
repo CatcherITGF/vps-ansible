@@ -1,15 +1,17 @@
 ---
 - name: install software
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     update_cache: yes
-  with_items:
-    - make
-    - python3-pip
+  vars:
+    packages:
+      - make
+      - python3-pip
 
 - name: install docker module
   pip:
-    name: "{{ item }}"
-  with_items:
-    - docker
-    - docker-compose
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - docker
+      - docker-compose
