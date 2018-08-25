@@ -5,3 +5,4 @@
     src: "{{ app_dir }}"
     dest: "{{ role_path }}/files/"
     delete: yes
+    links: yes

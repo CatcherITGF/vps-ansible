@@ -1,2 +1,2 @@
-app_name: snupt.com
+app_name: speedtest
 app_dir: "{{ apps_dir }}/{{ app_name }}"

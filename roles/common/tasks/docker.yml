@@ -25,3 +25,12 @@
     name: "{{ username }}"
     groups: docker
     append: yes
+
+- name: install docker modules for ansible purpose
+  pip:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - docker
+      - docker-compose

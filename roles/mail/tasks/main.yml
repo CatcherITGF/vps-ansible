@@ -5,8 +5,8 @@
 - name:
   import_tasks: app_present.yml
 
-- name:
-  import_tasks: backup.yml
+# - name:
+#   import_tasks: backup.yml
 
-- name:
-  import_tasks: cron.yml
+# - name:
+#   import_tasks: cron.yml

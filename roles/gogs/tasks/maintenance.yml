@@ -1,0 +1,20 @@
+---
+- name:
+  import_tasks: push.yml
+  tags:
+    - gogs-push
+
+- name:
+  import_tasks: pull.yml
+  tags:
+    - gogs-pull
+
+- name:
+  import_tasks: app_present.yml
+  tags:
+    - gogs-up
+
+- name:
+  import_tasks: app_absent.yml
+  tags:
+    - gogs-down

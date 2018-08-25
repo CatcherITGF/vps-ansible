@@ -5,9 +5,17 @@
 
   roles:
     - common
-    - blog
     - mail
     - rainloop
+    - gogs
+    - web
     - openvpn
     - ikev2
     - mtproto
+    - speedtest
+
+  tasks:
+    - name:
+      import_role:
+        name: common
+        tasks_from: reboot.yml

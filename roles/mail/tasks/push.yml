@@ -6,4 +6,5 @@
     delete: yes
     owner: no
     group: no
+    links: yes
   # become: no

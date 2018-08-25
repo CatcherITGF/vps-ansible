@@ -1,0 +1,11 @@
+---
+- name: stop {{ app_name }}
+  docker_service:
+    project_src: "{{ app_dir }}"
+    services:
+     - app
+    state: absent
+  register: output
+
+- debug:
+    var: output

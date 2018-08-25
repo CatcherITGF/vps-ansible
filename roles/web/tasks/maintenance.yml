@@ -2,19 +2,19 @@
 - name:
   import_tasks: push.yml
   tags:
-    - blog-push
+    - web-push
 
 - name:
   import_tasks: pull.yml
   tags:
-    - blog-pull
+    - web-pull
 
 - name:
   import_tasks: app_present.yml
   tags:
-    - blog-up
+    - web-up
 
 - name:
   import_tasks: app_absent.yml
   tags:
-    - blog-down
+    - web-down

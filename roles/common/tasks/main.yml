@@ -11,13 +11,13 @@
   import_tasks: upgrade.yml
 
 - name:
-  import_tasks: do.yml
+  import_tasks: reboot.yml
 
 - name:
-  import_tasks: docker.yml
+  import_tasks: do.yml
 
 - name:
   import_tasks: software.yml
 
 - name:
-  import_tasks: reboot.yml
+  import_tasks: docker.yml

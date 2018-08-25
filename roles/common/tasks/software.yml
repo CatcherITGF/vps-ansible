@@ -1,17 +1,11 @@
 ---
-- name: install software
+- name: install additional software
   apt:
     name: "{{ packages }}"
     update_cache: yes
   vars:
     packages:
-      - make
       - python3-pip
-
-- name: install docker module
-  pip:
-    name: "{{ packages }}"
-  vars:
-    packages:
-      - docker
-      - docker-compose
+      - make
+      - iperf3
+      - tmux

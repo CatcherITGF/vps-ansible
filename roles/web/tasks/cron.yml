@@ -20,4 +20,4 @@
     minute: "0"
     hour: "3"
     weekday: "0"
-    job: "PASSPHRASE={{ password }} duplicity full --allow-source-mismatch {{ app_dir }} b2://{{ b2_account_id }}:{{ b2_application_key }}/{{ app_name }}"
+    job: "PASSPHRASE={{ password }} duplicity full --allow-source-mismatch {{ app_dir }} b2://{{ b2_account_id }}:{{ b2_application_key }}@dk-vps/{{ app_name }}"
